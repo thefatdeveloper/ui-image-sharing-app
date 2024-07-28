@@ -18,7 +18,9 @@ export default function UserSearch() {
     const fetchFollowings = async () => {
       try {
         // get the followings from the database using axios
-        const res = await axios.get("/users/followers/" + user?._id);
+        const res = await axios.get(
+          `${process.env.API_HOST}/api/users/followers/` + user?._id
+        );
         setFollowingsList(res.data);
       } catch (error) {
         console.log(error);
@@ -67,7 +69,9 @@ export default function UserSearch() {
     const searchUser = async () => {
       try {
         // get the user from the database
-        const res = await axios.get(`/users/?username=${searchUserName}`);
+        const res = await axios.get(
+          `${process.env.API_HOST}/api/users/?username=${searchUserName}`
+        );
         // set the searched user
         setSearchedUser(res.data);
         // set the error to false

@@ -22,7 +22,10 @@ export default function Login() {
   async function login({ email, password }) {
     try {
       // make a post request to the server to login
-      const response = await axios.post("/auth/login", { email, password });
+      const response = await axios.post(
+        `${process.env.API_HOST}/api/auth/login`,
+        { email, password }
+      );
 
       // set the user in the redux store
       dispatch(loginSuccess(response.data));
