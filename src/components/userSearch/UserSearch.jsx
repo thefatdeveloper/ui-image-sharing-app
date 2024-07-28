@@ -19,7 +19,7 @@ export default function UserSearch() {
       try {
         // get the followings from the database using axios
         const res = await axios.get(
-          `${process.env.API_HOST}/api/users/followers/` + user?._id
+          `${process.env.REACT_APP_API_HOST}/api/users/followers/` + user?._id
         );
         setFollowingsList(res.data);
       } catch (error) {
@@ -70,7 +70,7 @@ export default function UserSearch() {
       try {
         // get the user from the database
         const res = await axios.get(
-          `${process.env.API_HOST}/api/users/?username=${searchUserName}`
+          `${process.env.REACT_APP_API_HOST}/api/users/?username=${searchUserName}`
         );
         // set the searched user
         setSearchedUser(res.data);

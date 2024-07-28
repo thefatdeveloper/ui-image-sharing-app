@@ -16,7 +16,7 @@ function Post({ post }) {
     const fetchUser = async () => {
       // get the user from the database
       const res = await axios.get(
-        `${process.env.API_HOST}/api/users/?userId=${post.userId}`
+        `${process.env.REACT_APP_API_HOST}/api/users/?userId=${post.userId}`
       );
       setUser(res.data);
     };

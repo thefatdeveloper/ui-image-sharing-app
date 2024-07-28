@@ -39,7 +39,7 @@ export default function ProfileSection({ user }) {
       // if the user is following the current user, unfollow the user
       if (isFollowing) {
         await axios.put(
-          `${process.env.API_HOST}/api/users/${user._id}/unfollow`,
+          `${process.env.REACT_APP_API_HOST}/api/users/${user._id}/unfollow`,
           {
             userId: currentUser._id,
           }
@@ -48,7 +48,7 @@ export default function ProfileSection({ user }) {
       } else {
         // if the user is not following the current user, follow the user
         await axios.put(
-          `${process.env.API_HOST}/api/users/${user._id}/follow`,
+          `${process.env.REACT_APP_API_HOST}/api/users/${user._id}/follow`,
           {
             userId: currentUser._id,
           }

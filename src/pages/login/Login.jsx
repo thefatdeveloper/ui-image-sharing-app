@@ -23,7 +23,7 @@ export default function Login() {
     try {
       // make a post request to the server to login
       const response = await axios.post(
-        `${process.env.API_HOST}/api/auth/login`,
+        `${process.env.REACT_APP_API_HOST}/api/auth/login`,
         { email, password }
       );
 
