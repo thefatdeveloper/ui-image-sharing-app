@@ -16,8 +16,12 @@ export default function Body({ username, page }) {
     const fetchPosts = async () => {
       // get the posts from the database
       const res = username
-        ? await axios.get("/posts/profile/" + username)
-        : await axios.get("posts/timeline/" + user._id);
+        ? await axios.get(
+            `${process.env.API_HOST}/api/posts/profile/` + username
+          )
+        : await axios.get(
+            `${process.env.API_HOST}/api/posts/timeline/` + user._id
+          );
       setPosts(res.data);
     };
 

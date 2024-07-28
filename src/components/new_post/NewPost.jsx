@@ -44,7 +44,7 @@ export default function NewPost({ pageType }) {
 
       // send the form data to the server
       try {
-        await axios.post("/upload", data);
+        await axios.post(`${process.env.API_HOST}/api/upload`, data);
       } catch (error) {
         console.log(error);
       }
@@ -52,7 +52,7 @@ export default function NewPost({ pageType }) {
 
     try {
       // send the new post to the server
-      await axios.post("/posts", nPost);
+      await axios.post(`${process.env.API_HOST}/api/posts`, nPost);
 
       if (pageType === "profile") {
         navigate("/");
