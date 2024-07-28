@@ -22,7 +22,7 @@ export default function ProfileSection({ user }) {
     const fetchPosts = async () => {
       // get the posts from the database
       const res = await axios.get(
-        `https://72ts5n-8000.csb.app/api/posts/profile/${user.username}`
+        `${process.env.REACT_APP_API_HOST}/api/posts/profile/${user.username}`
       );
       setPostsCount(res.data.length);
     };

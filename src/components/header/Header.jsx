@@ -11,7 +11,7 @@ export default function Header() {
   let navigate = useNavigate();
 
   // get the base64 image
-  let base64String = user.profilePicture.split(",");
+  let base64String = user?.profilePicture?.split(",");
 
   // function to handle logout
   function handleLogout() {

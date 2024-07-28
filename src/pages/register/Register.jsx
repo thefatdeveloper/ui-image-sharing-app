@@ -46,7 +46,7 @@ export default function Register() {
       try {
         // make a post request to the server to register
         await axios.post(
-          `${process.env.REACT_APP_API_HOST}/api/api/auth/register`,
+          `${process.env.REACT_APP_API_HOST}/api/auth/register`,
           user
         );
         // redirect to the login page
