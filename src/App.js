@@ -14,6 +14,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import Profile from "./pages/profile/Profile";
 
+//changed
 function App() {
   const { user } = useSelector((state) => state.user);
 
